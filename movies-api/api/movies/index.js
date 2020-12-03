@@ -3,9 +3,9 @@ import {
   getMovies, getMovie, getMovieReviews
 } from '../tmdb-api';
 
-const router = express.Router();
+const router = express.Router(); //took out 'next' from all three get functions
 
-router.get('/', (req, res,next) => {
+router.get('/', (req, res, next) => {
   getMovies().then(movies => res.status(200).send(movies));
 });
 
