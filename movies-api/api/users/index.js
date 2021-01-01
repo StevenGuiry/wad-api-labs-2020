@@ -13,10 +13,10 @@ router.get('/', (req, res, next) => {
 router.get('/:userName/favourites', (req, res, next) => {
     const userName = req.params.userName;
     User.findByUserName(userName).populate('favourites').then(
-      user => res.status(201).json(user.favourites)
+        user => res.status(201).json(user.favourites)
     ).catch(next);
-  });
-  
+});
+
 
 // Register OR authenticate a user
 router.post('/', async (req, res, next) => {
@@ -71,10 +71,17 @@ router.post('/:userName/favourites', async (req, res, next) => {
     const userName = req.params.userName;
     const movie = await movieModel.findByMovieDBId(newFavourite);
     const user = await User.findByUserName(userName);
-    await user.favourites.push(movie._id);
-    await user.save(); 
-    res.status(201).json(user); 
-  });
+    if (isMatch && !err) {
+        await user.favourites.push(movie._id);
+        await user.save();
+        res.status(201).json(user);
+    } else {
+        res.status(401).json({
+            code: 401,
+            msg: 'Failed to add favourite.'
+        });
+    }
+});
 
 
 export default router;
