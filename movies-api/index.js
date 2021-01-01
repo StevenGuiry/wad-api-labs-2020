@@ -3,8 +3,9 @@ import express from 'express';
 import moviesRouter from './api/movies';
 import bodyParser from 'body-parser';
 import './db';
-import {loadUsers} from './seedData';
+import {loadUsers, loadMovies} from './seedData';
 import usersRouter from './api/users';
+import genreRouter from './api/genres';
 import session from 'express-session';
 import passport from './authenticate';
 
@@ -25,6 +26,7 @@ const port = process.env.PORT;
 
 if (process.env.SEED_DB) {
   loadUsers();
+  loadMovies();
 }
 
 app.use(express.static('public'));
@@ -40,6 +42,7 @@ app.use(session({
 
 app.use(passport.initialize());
 
+app.use('/api/genres', genreRouter);
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
 
 app.use('/api/users', usersRouter);
