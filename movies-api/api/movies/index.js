@@ -10,6 +10,7 @@ router.get('/', (req, res, next) => {
   .catch((error) => next(error));
 });
 
+//TODO -- Fix get genre 
 router.get('/:genre_id', (req, res, next) => {
   const genre_id = parseInt(req.params.genre_ids);
   getGenres(genre_id).then(movies => res.status(200).send(movies))
