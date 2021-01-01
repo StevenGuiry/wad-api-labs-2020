@@ -3,15 +3,10 @@ import bcrypt from 'bcrypt-nodejs';
 
 const Schema = mongoose.Schema;
 
-const MovieSchema = new Schema({
-    id: { type: Number, unique: true, required: true },
-    title: { type: String, unique: true, required: true }
-});
-
 const UserSchema = new Schema({
     username: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-    favourites: [MovieSchema]
+    favourites: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Movies' }]
 });
 
 UserSchema.pre('save', function (next) {
