@@ -1,0 +1,11 @@
+.table_outer { 
+    height: 25em; overflow: auto;
+    margin-top: 4%;
+    margin-bottom: 50px;
+    margin-right: 50%;
+}
+.col_one {
+    width: 4em;
+    align-content: center;
+    margin-left: 1em;
+}
