@@ -26,7 +26,7 @@ router.post('/', async (req, res, next) => {
         });
     } else {
         const user = await User.findByUserName(req.body.username).catch(next);
-        if (!user) return res.status(401).json({ code: 401, msg: 'Authentication failed. User not found.' });
+        if (user === null) return res.status(401).json({ code: 401, msg: 'Authentication failed. User not found.' });
         user.comparePassword(req.body.password, (err, isMatch) => {
             if (isMatch && !err) {
                 // if user is found and password is right create a token
@@ -57,11 +57,20 @@ router.put('/:id', (req, res, next) => {
         .then(user => res.json(200, user)).catch(next);
 });
 
+//Get user favourites
 router.get('/:userName/favourites', (req, res, next) => {
     const userName = req.params.userName;
-    User.findByUserName(userName).populate('favourites').then(
-        user => res.status(201).json(user.favourites)
-    ).catch(next);
+
+    if (User.findByUserName(userName) == null) {
+        res.status(401).json({
+            success: false,
+            msg: "Invalid user ID."
+        });
+    } else {
+        User.findByUserName(userName).populate('favourites').then(
+            user => res.status(201).json(user.favourites)
+        ).catch(next);
+    }
 });
 
 //Add a favourite but Can add duplicates!
@@ -69,15 +78,22 @@ router.post('/:userName/favourites', async (req, res, next) => {
     const newFavourite = req.body.id;
     const userName = req.params.userName;
     const movie = await movieModel.findByMovieDBId(newFavourite);
-    const user = await User.findByUserName(userName);
-    const duplicate = user.favourites.find(movie.id)
-    if (duplicate) {
-        req.status.send("This movie already exists in favourites")
-    } else {
-        await user.favourites.push(movie._id);
-        await user.save();
-        res.status(201).json(user);
+    const user = await User.findByUserName(userName).catch(next);
+
+    //User not in database
+    if (user === null) return res.status(401).json({ code: 401, msg: 'Authentication failed. User not found in database.' });
+
+    //Movie ID check
+    if (movie === null) {
+        res.status(401).json({
+            success: false,
+            msg: "Movie ID not valid.Here"
+        })
     }
+    await user.favourites.push(movie._id);
+    await user.save();
+    res.status(201).json(user);
+    console.log;
 });
 
 

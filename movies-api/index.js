@@ -22,6 +22,11 @@ const errHandler = (err, req, res, next) => {
 
 const app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(passport.initialize());
+
+
 const port = process.env.PORT;
 
 if (process.env.SEED_DB) {
@@ -30,9 +35,6 @@ if (process.env.SEED_DB) {
 }
 
 app.use(express.static('public'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-
 //session middleware
 app.use(session({
   secret: 'ilikecake',
@@ -40,12 +42,10 @@ app.use(session({
   saveUninitialized: true
 }));
 
-app.use(passport.initialize());
 
-app.use('/api/genres', genreRouter);
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
-
 app.use('/api/users', usersRouter);
+app.use('/api/genres', genreRouter);
 app.use(errHandler);
 
 app.listen(port, () => {
