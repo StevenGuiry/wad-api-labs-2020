@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getVideos } from "../../api/tmdb-api";
+import { getVideos } from "../../api/movie-api";
 import './movieTrailers.css';
 
 export const URL_YOUTUBE = 'https://www.youtube.com/embed/';

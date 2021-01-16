@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCredits } from "../../api/tmdb-api";
+import { getCredits } from "../../api/movie-api";
 import Image from 'react-bootstrap/Image';
 import "./movieCredits.css";
 
