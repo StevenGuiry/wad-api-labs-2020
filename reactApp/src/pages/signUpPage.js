@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
-import { AuthContext } from './authContext';
+import { AuthContext } from '../contexts/authContext';
 
 const SignUpPage = props => {
   const context = useContext(AuthContext)
@@ -19,7 +19,7 @@ const SignUpPage = props => {
   const { from } = props.location.state || { from: { pathname: "/" } };
 
   if (registered === true) {
-    return <Redirect to="./login" />;
+    return <Redirect to="/login" />;
   }
 
   return (
