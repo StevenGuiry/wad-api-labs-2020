@@ -42,8 +42,7 @@ app.use(session({
 
 app.use(express.static('public'));
 app.use(passport.initialize());
-//app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
-app.use('/api/movies', moviesRouter);
+app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/genres', genreRouter);
 app.use(errHandler);

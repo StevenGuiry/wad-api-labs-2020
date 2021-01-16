@@ -1,12 +1,17 @@
 import React, { useContext } from "react";
-import {MoviesContext} from "../../contexts/moviesContext";
+import { MoviesContext } from "../../contexts/moviesContext";
+import { AuthContext } from "../../contexts/authContext";
+import { addFavourite } from "../../api/movie-api";
 
 const AddToFavoriteButton = ({ movie }) => {
-  const context = useContext(MoviesContext);
+  const moviesContext = useContext(MoviesContext);
+  const authContext = useContext(AuthContext);
 
   const handleAddToFavorite = e => {
     e.preventDefault();
-    context.addToFavorites(movie.id);
+    moviesContext.addToFavorites(movie.id);
+    addFavourite(authContext.userName, movie.id);
+
   };
   return (
     <button

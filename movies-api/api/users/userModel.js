@@ -33,17 +33,17 @@ UserSchema.statics.findByUserName = function (username) {
     return this.findOne({ username: username });
 };
 
-//Added 
-UserSchema.statics.getFavourites = function (username) {
-    const user = this.findByUserName(username)
-    return user.favourites
-};
+// //Added 
+// UserSchema.statics.getFavourites = function (username) {
+//     const user = this.findByUserName(username)
+//     return user.favourites
+// };
 
-//Added
-UserSchema.statics.findFavourite = function (username, id) {
-    const user = this.findByUserName(username);
-    return userFavourites.findOne({ id: id });
-};
+// //Added
+// UserSchema.statics.findFavourite = function (username, id) {
+//     const user = this.findByUserName(username);
+//     return userFavourites.findOne({ id: id });
+// };
 
 UserSchema.methods.comparePassword = function (passw, cb) {
     bcrypt.compare(passw, this.password, (err, isMatch) => {
