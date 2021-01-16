@@ -1,4 +1,3 @@
-import { json } from 'express'; //Added
 import fetch from 'node-fetch';
 
 export const getMovies = () => {

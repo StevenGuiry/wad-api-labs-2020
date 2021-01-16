@@ -11,6 +11,12 @@ import passport from './authenticate';
 
 dotenv.config();
 
+
+if (process.env.SEED_DB) {
+  loadUsers();
+  loadMovies();
+}
+
 const errHandler = (err, req, res, next) => {
   /* if the error in development then send stack trace to display whole error,
   if it's in production then just send error message  */
@@ -22,19 +28,11 @@ const errHandler = (err, req, res, next) => {
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(passport.initialize());
-
-
 const port = process.env.PORT;
 
-if (process.env.SEED_DB) {
-  loadUsers();
-  loadMovies();
-}
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
-app.use(express.static('public'));
 //session middleware
 app.use(session({
   secret: 'ilikecake',
@@ -42,8 +40,10 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
-app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use(express.static('public'));
+app.use(passport.initialize());
+//app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use('/api/movies', moviesRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/genres', genreRouter);
 app.use(errHandler);

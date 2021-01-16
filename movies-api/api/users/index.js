@@ -10,6 +10,15 @@ router.get('/', (req, res, next) => {
     User.find().then(users => res.status(200).json(users)).catch(next);
 });
 
+//Get user favourites
+router.get('/:userName/favourites', (req, res, next) => {
+    const userName = req.params.userName;
+
+    User.findByUserName(userName).populate('favourites').then(
+        user => res.status(201).json(user.favourites)
+    ).catch(next);
+});
+
 // Register OR authenticate a user
 router.post('/', async (req, res, next) => {
     if (!req.body.username || !req.body.password) {
@@ -57,43 +66,28 @@ router.put('/:id', (req, res, next) => {
         .then(user => res.json(200, user)).catch(next);
 });
 
-//Get user favourites
-router.get('/:userName/favourites', (req, res, next) => {
-    const userName = req.params.userName;
-
-    if (User.findByUserName(userName) == null) {
-        res.status(401).json({
-            success: false,
-            msg: "Invalid user ID."
-        });
-    } else {
-        User.findByUserName(userName).populate('favourites').then(
-            user => res.status(201).json(user.favourites)
-        ).catch(next);
-    }
-});
-
 //Add a favourite but Can add duplicates!
 router.post('/:userName/favourites', async (req, res, next) => {
     const newFavourite = req.body.id;
     const userName = req.params.userName;
-    const movie = await movieModel.findByMovieDBId(newFavourite);
-    const user = await User.findByUserName(userName).catch(next);
 
-    //User not in database
-    if (user === null) return res.status(401).json({ code: 401, msg: 'Authentication failed. User not found in database.' });
-
-    //Movie ID check
+    const movie = await movieModel.findByMovieDBId(newFavourite).catch(next);
     if (movie === null) {
-        res.status(401).json({
-            success: false,
-            msg: "Movie ID not valid.Here"
-        })
+        return res.status(404).json({ code: 404, msg: "Movie ID not in database!" });
     }
+
+    const user = await User.findByUserName(userName).catch(next);
+    if (user === null) {
+        return res.status(404).json({ code: 404, msg: 'Authentication failed. User not found in database.' });
+    }
+
+    if (user.favourites.includes(movie._id)) {
+        return res.status(404).json({ code: 404, msg: "Movie already in favourites!" });
+    }
+
     await user.favourites.push(movie._id);
     await user.save();
     res.status(201).json(user);
-    console.log;
 });
 
 
