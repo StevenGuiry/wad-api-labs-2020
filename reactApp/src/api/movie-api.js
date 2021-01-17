@@ -31,7 +31,7 @@ export const addFavourite = (username, id) => {
 
 export const getFavourites = (username) => {
     return fetch(
-        `/api/users/` + username + `/favourites`, {
+        `/api/users/${username}/favourites`, {
             headers: {
                 'Authorization': window.localStorage.getItem('token')
             }
@@ -127,7 +127,7 @@ export const getNowPlayingMovies = () => {
         .then(res => res.json());
 };
 
-export const getTopRated = () => {
+export const getTopRatedMovies = () => {
     return fetch(
         '/api/toprated', {
             headers: {

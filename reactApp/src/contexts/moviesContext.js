@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext, useReducer } from "react";
-import { getMovies, getUpcomingMovies, getTopRated, getNowPlayingMovies } from "../api/movie-api"; //Changed from tmdb api
+import { getMovies, getUpcomingMovies, getTopRatedMovies, getNowPlayingMovies } from "../api/movie-api"; //Changed from tmdb api
 
 export const MoviesContext = createContext(null);
 
@@ -83,7 +83,7 @@ const MoviesContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    getTopRated().then((movies) => {
+    getTopRatedMovies().then((movies) => {
       dispatch({ type: "load-toprated", payload: { movies } });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps

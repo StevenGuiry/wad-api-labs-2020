@@ -19,7 +19,15 @@ export const getMovies = () => {
 
   export const getNowPlayingMovies = () => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/nowplaying?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+    )
+    .then(res => res.json())
+    .then(json => res.results);
+  }
+
+  export const getTopRatedMovies = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
     )
     .then(res => res.json())
     .then(json => res.results);
