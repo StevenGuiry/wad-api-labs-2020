@@ -106,6 +106,7 @@ app.use(morgan('tiny'));
 
 and the output is sent to the console as such:
 ![][morgan]
+>Morgan example
 
 
 ----------------------------------------------
