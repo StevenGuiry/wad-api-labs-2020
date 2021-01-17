@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import PageTemplate from '../components/templateMovieListPage';
 import { MoviesContext } from '../contexts/moviesContext';
-import AddToFavouriteButton from '../components/buttons/addToFavourites';
+import AddToFavouriteButton from '../components/buttons/addToFavouritesToprated';
 
 const TopRatedMoviesPage = () => {
     const context = useContext(MoviesContext);
     const movies = context.toprated.filter((m) => {
-      return !("Favourite" in m);
+      return !("favourite" in m);
     });
     
     return (

@@ -1,29 +1,23 @@
-import React, { useContext, useState } from "react";
-import MovieListPageTemplate from "../components/templateMovieListPage";
+import React, { useContext } from "react";
+import MovieListPageTemplate from "../components/templateFavouritesPage";
 import AddReviewButton from '../components/buttons/addReview';
-import { AuthContext } from '../contexts/authContext';
-
-
+import { MoviesContext } from "../contexts/moviesContext";
 
 const FavouriteMoviesPage = () => {
-  const context = useContext(AuthContext);
-  const [favourites, setFavourites] = useState({});
+  const context = useContext(MoviesContext);
+  const movieFavourites = context.movies.filter(m => m.favourite);
+  const topratedFavourites = context.toprated.filter(m => m.favourite);
+  const nowplayingFavourites = context.nowplaying.filter(m => m.favourite);
 
-  if (context.isAuthenticated) {
-    var userFav = async () => {
-      let favouriteMovies = await context.getUserFavourites(context.userName);
-      return favouriteMovies;
-    }
-    userFav().then(userFavourites => setFavourites(userFavourites));
+  const allFavourites = [...movieFavourites, ...topratedFavourites, ...nowplayingFavourites];
 
-    return (
-      <MovieListPageTemplate
-        movies={favourites}
-        title={"Favourite Movies"}
-        action={movie => <AddReviewButton movie={movie} />}
-      />
-    );
-  };
-}
+  return (
+    <MovieListPageTemplate
+      movies={allFavourites}
+      title={"Favourite Movies"}
+      action={movie => <AddReviewButton movie={movie} />}
+    />
+  );
+};
 
 export default FavouriteMoviesPage;
