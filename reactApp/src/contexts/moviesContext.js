@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext, useReducer } from "react";
-import { getMovies, getUpcomingMovies, getTopRatedMovies, getNowPlayingMovies } from "../api/movie-api";
+import { getMovies, getUpcomingMovies, getTopRatedMovies } from "../api/movie-api";
 
 export const MoviesContext = createContext(null);
 
@@ -31,19 +31,6 @@ const reducer = (state, action) => {
           m.id === action.payload.movie.id ? { ...m, favourite: true } : m
         ),
       };
-    // case "add-nowplaying-favourite":
-    //   return {
-    //     nowplaying: state.nowplaying.map((m) =>
-    //       m.id === action.payload.movie.id ? { ...m, favourite: true } : m
-    //     ),
-    //     upcoming: [...state.upcoming],
-    //     toprated: state.toprated.map((m) =>
-    //       m.id === action.payload.movie.id ? { ...m, favourite: true } : m
-    //     ),
-    //     movies: state.movies.map((m) =>
-    //       m.id === action.payload.movie.id ? { ...m, favourite: true } : m
-    //     ),
-    //   };
     case "add-watchlist":
       return {
         upcoming: state.upcoming.map((m) =>
@@ -57,8 +44,6 @@ const reducer = (state, action) => {
       return { upcoming: action.payload.movies, movies: [...state.movies], toprated: [...state.toprated], nowplaying: [...state.nowplaying] };
     case "load-toprated":
       return { toprated: action.payload.movies, movies: [...state.movies], upcoming: [...state.upcoming], nowplaying: [...state.nowplaying] };
-    // case "load-nowplaying":
-    //   return { nowplaying: action.payload.movies, movies: [...state.movies], upcoming: [...state.upcoming], toprated: [...state.toprated] }
     case "add-review":
       return {
         movies: state.movies.map((m) =>
@@ -68,7 +53,6 @@ const reducer = (state, action) => {
         ),
         upcoming: [...state.upcoming],
         toprated: [...state.toprated],
-        //nowplaying: [...state.nowplaying],
       };
     default:
       return state;
@@ -89,11 +73,6 @@ const MoviesContextProvider = (props) => {
     const index = state.toprated.map((m) => m.id).indexOf(movieId);
     dispatch({ type: "add-toprated-favourite", payload: { movie: state.toprated[index] } });
   };
-
-  // const addToNowplayingFavourites = (movieId) => {
-  //   const index = state.nowplaying.map((m) => m.id).indexOf(movieId);
-  //   dispatch({ type: "add-nowplaying-favourite", payload: { movie: state.nowplaying[index] } });
-  // };
 
   const addToWatchlist = (movieId) => {
     const index = state.upcoming.map((m) => m.id).indexOf(movieId);
@@ -125,13 +104,6 @@ const MoviesContextProvider = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   getNowPlayingMovies().then((movies) => {
-  //     dispatch({ type: "load-nowplaying", payload: { movies } });
-  //   });
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
   return (
     <MoviesContext.Provider
       value={{
@@ -141,7 +113,6 @@ const MoviesContextProvider = (props) => {
         nowplaying: state.nowplaying,
         addToFavourites: addToFavourites,
         addToTopratedFavourites: addToTopratedFavourites,
-        //addToNowplayingFavourites: addToNowplayingFavourites,
         addToWatchlist: addToWatchlist,
         addReview: addReview,
         setAuthenticated

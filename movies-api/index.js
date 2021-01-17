@@ -33,6 +33,7 @@ const errHandler = (err, req, res, next) => {
 };
 
 const app = express();
+const morgan = require("morgan");
 
 const port = process.env.PORT;
 
@@ -45,6 +46,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }));
+app.use(morgan('tiny'));
 
 app.use(express.static('public'));
 app.use(passport.initialize());

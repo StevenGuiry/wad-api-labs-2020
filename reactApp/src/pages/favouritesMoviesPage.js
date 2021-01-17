@@ -7,9 +7,8 @@ const FavouriteMoviesPage = () => {
   const context = useContext(MoviesContext);
   const movieFavourites = context.movies.filter(m => m.favourite);
   const topratedFavourites = context.toprated.filter(m => m.favourite);
-  const nowplayingFavourites = context.nowplaying.filter(m => m.favourite);
 
-  const allFavourites = [...movieFavourites, ...topratedFavourites, ...nowplayingFavourites];
+  const allFavourites = [...movieFavourites, ...topratedFavourites];
 
   return (
     <MovieListPageTemplate
