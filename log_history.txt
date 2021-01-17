@@ -1,0 +1,300 @@
+commit 68121e9cb5677297ad77b75aef2752fd6784c662
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 23:15:33 2021 +0000
+
+    Final push
+
+commit c5fc3f138e6ef605cba8b9ba29b9e67221915b8b
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 22:30:44 2021 +0000
+
+    Updated README file
+
+commit a9b808ebaa774d27c32d70bde683d29d1b372868
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 22:25:16 2021 +0000
+
+    Updated README
+
+commit b24244f3780d3eb2d11746e81e7ebb2a55b2ef15
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 21:01:25 2021 +0000
+
+    Added mogan logger
+
+commit 13b8d6f5b64b0a383a332d379271152b3f55a0f9
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 20:32:43 2021 +0000
+
+    Favourites page working
+
+commit 9da0927104318ae06f0bf7cf0adf72c7a5be5a9e
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 16:01:09 2021 +0000
+
+    User favourites WIP
+
+commit cd627f100ac3cbccfb849e2e9f021d0a64a9d511
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 15:30:42 2021 +0000
+
+    Added credits/trailer to movie details page
+
+commit a601aeebd69eb4c0f836236fc5ee0af297453b86
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 15:02:51 2021 +0000
+
+    Top rated from API added
+
+commit e23d20d8bf6c433a31d2185e7e83663d5e233204
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 14:37:11 2021 +0000
+
+    Now playing from API working
+
+commit 190e3593cd021706a9c48ae69850c336ddb44486
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sun Jan 17 14:08:14 2021 +0000
+
+    Upcoming movies from API fixed
+
+commit d17528ddae1a5c9f9e7f8bf1b574446abf786f26
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 16 21:59:03 2021 +0000
+
+    Login/Signup working, upcoming page broken
+
+commit dca3185b116528ebad8ba984da5ec881693a37cf
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 16 20:11:24 2021 +0000
+
+    Fixed favourites issue
+
+commit 8d38f2f4c550e1555a11fe8922d53a6de4e1f811
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 16 14:26:15 2021 +0000
+
+    Adding API route - Upcoming
+
+commit 76306795ad49cc79c0a143c89d89b5f3ecaa5d55
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 16 14:02:35 2021 +0000
+
+    Changed to my API
+
+commit 8ae8136a4828c24b0da7fb1430ffdfbed5bfed5a
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 16 11:59:36 2021 +0000
+
+    React app successfully integrated
+
+commit 1981bbca6968446618e56f3dc4fcec22df0c3c00
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 15 19:22:50 2021 +0000
+
+    Integrating React WIP
+
+commit 1cbb1ea24920416064a51141c7d624f13fbd8513
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 15 18:58:15 2021 +0000
+
+    Updated dependencies
+
+commit e3120761d810e989b74071e2373ae07f075554f7
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 15 18:53:18 2021 +0000
+
+    Favourites WIP
+
+commit 12fe72c638da938cea8d70e8c9a98b2745973dd2
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 2 13:45:57 2021 +0000
+
+    I've completed all my labs!
+
+commit 0a9082f68388b08676aae583f85bf4b0b358f639
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 2 13:38:13 2021 +0000
+
+    Topic 11 - Sign up
+
+commit b4c2d73f667889e75b38ba47b0053e3254d6d230
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 2 13:35:18 2021 +0000
+
+    Topic 11 - Auth
+
+commit c4b70e1978f01d9251fcefb592d2f02b0adf83cb
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 2 13:30:40 2021 +0000
+
+    Topic 11 - React App
+
+commit e3cc75348a023358eaf02122d614b55145eb43af
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 2 13:23:20 2021 +0000
+
+    Topic 11 - Set up
+
+commit 080d5d7bdd941de21f7ffef16618d264791c60e7
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Sat Jan 2 13:09:28 2021 +0000
+
+    Favourites duplicate issue resolved
+
+commit 010795d8a5510f9eda945f908e3a0a575fae84bd
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 1 16:59:43 2021 +0000
+
+    Topic 10 - Exercises (WIP)
+
+commit dc35504c460de1c2646860862543392b08600d4f
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 1 16:23:58 2021 +0000
+
+    Topic 10 - Object Referencing
+
+commit 31a0d35fdd727479b7e08fd72aba60d0f0caf011
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 1 16:08:30 2021 +0000
+
+    Topic 10 - Update Movies Data/Route
+
+commit 63501f9013af55603f506a7b69aae8aa48bbf837
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 1 15:35:38 2021 +0000
+
+    Topic 10 - Passport
+
+commit cf1847f0834f191ae87037e30b636d3482540c2f
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 1 15:12:42 2021 +0000
+
+    Topic 10 - JWT
+
+commit e08fd135680076b788d8081c4b2c81d60f207db8
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 1 15:04:17 2021 +0000
+
+    Topic 10 - Salt and Hash
+
+commit 2cbbc5f378619330ad6efabffd28addc97919eea
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Fri Jan 1 14:59:49 2021 +0000
+
+    Topic 10 - Session based Auth
+
+commit 41461f44f68774d943f860248d9242249297a35e
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 14:57:03 2020 +0000
+
+    Validation rules added, adding getGenres is WIP
+
+commit f3641f0df55112985fc7e76018cb552de87f2567
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 14:26:08 2020 +0000
+
+    Week 9 User Favourites
+
+commit ca67edcd67cbcaebf6cac9a7f35c88919b899e84
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 14:19:48 2020 +0000
+
+    Week 9 Users Router
+
+commit 1094b001429a07005ffd96110ad15bae8cc78520
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 14:08:12 2020 +0000
+
+    Week 9 Included Mongoose
+
+commit 9a560dc982d9daa7530703d344ee45efbe8fc474
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 13:56:56 2020 +0000
+
+    Week 9 Added Mongo
+
+commit 13df605ebdb0d52f0c30e6c70f132b94a20c761b
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 13:49:43 2020 +0000
+
+    Week 9 Added Mongo
+
+commit 85af07449f9abc341c03fd439895329a4cccecd2
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 13:43:04 2020 +0000
+
+    Week 9 Error Handling
+
+commit b3d29f510bac7206b3d85375a75bba73f0e7dde9
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 13:29:33 2020 +0000
+
+    Week 9 refactor movie api
+
+commit 339e1a68df4bc6147ddb27ddbf286113d0adbeda
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 13:18:23 2020 +0000
+
+    API database added
+
+commit 198088a0aee2225b7521a7e116c38ec5a8bb1781
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 13:00:05 2020 +0000
+
+    Added routing for add, update and deleting a movie
+
+commit 02a76375505f216fb6ee0c1c64bb134832c84d68
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 12:45:06 2020 +0000
+
+    Initial Express App
+
+commit a59874139aa9e54f32795029faef061e3c4f6404
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 12:33:07 2020 +0000
+
+    Initial Express App
+
+commit 430687090a1022434b79fb422d965d2656de73ea
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 12:24:40 2020 +0000
+
+    node-lab1, greeting module added
+
+commit 9195322fb41fc9ae25716b884af18f4fee57cdda
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 12:12:50 2020 +0000
+
+    node-lab1, simple server
+
+commit 29b458f6bd786712a5e87a316efcd14650153e96
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 11:54:29 2020 +0000
+
+    Set up and initial config
+
+commit d0d4000a7beab709fd48e86bd535bcb61d99e377
+Merge: 16c7955 89d5843
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 11:45:42 2020 +0000
+
+    Merge branch 'main' of https://github.com/StevenGuiry/wad-api-labs-2020 into main
+
+commit 16c79557915496b6d8be1425d52c6898aa4dfdb8
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 11:45:33 2020 +0000
+
+    Added gitignore file
+
+commit 89d5843d0d20b9f9ee50999c2cfafd91f02b5c2b
+Author: StevenGuiry <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 11:43:30 2020 +0000
+
+    Update README.md
+
+commit 31a108494a98ea663257cb954e4113ece1e0d7af
+Author: 46968144 <46968144+StevenGuiry@users.noreply.github.com>
+Date:   Thu Dec 3 11:41:21 2020 +0000
+
+    first commit
