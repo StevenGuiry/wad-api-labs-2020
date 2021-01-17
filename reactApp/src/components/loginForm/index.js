@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
-import { withRouter } from "react-router-dom"; //Added
-import { useForm } from "react-hook-form";
+import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from '../../contexts/authContext';
 import { Link } from "react-router-dom";
@@ -10,15 +9,13 @@ const LoginPage = props => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  //const { register, handleSubmit, errors} = useForm();
-
   const login = () => {
     context.authenticate(userName, password);
   };
 
   // Set 'from' to path where browser is redirected after a successful login.
   // Either / or the protected path user tried to access.
-  const { from } = props.location.state || { from: { pathname: "/" } };
+  const { from } = props.location.state || { from: {  pathname: "/home" } };
 
   if (context.isAuthenticated === true) {
     return <Redirect to={from} />;

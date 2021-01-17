@@ -44,6 +44,7 @@ export const getMovies = () => {
     return fetch(
         '/api/movies', {
         headers: {
+            'Content-Type': 'application/json',
             'Authorization': window.localStorage.getItem('token')
         }
     }
@@ -109,6 +110,7 @@ export const getUpcomingMovies = () => {
     return fetch(
         '/api/upcoming', {
             headers: {
+                'Content-Type': 'application/json',
                 'Authorization': window.localStorage.getItem('token')
             }
     }
@@ -120,6 +122,7 @@ export const getNowPlayingMovies = () => {
     return fetch(
         '/api/nowplaying', {
             headers: {
+                'Content-Type': 'application/json',
                 'Authorization': window.localStorage.getItem('token')
             }
     }
@@ -131,6 +134,7 @@ export const getTopRatedMovies = () => {
     return fetch(
         '/api/toprated', {
             headers: {
+                'Content-Type': 'application/json',
                 'Authorization': window.localStorage.getItem('token')
             }
     }

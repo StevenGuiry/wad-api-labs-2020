@@ -61,6 +61,7 @@ const reducer = (state, action) => {
 
 const MoviesContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, { movies: [], upcoming: [], toprated: [], nowplaying: [] });
+  // eslint-disable-next-line
   const [authenticated, setAuthenticated] = useState(false);
 
 

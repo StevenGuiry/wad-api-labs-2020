@@ -6,6 +6,7 @@ export const AuthContext = createContext(null);
 const AuthContextProvider = (props) => {
   const existingToken = localStorage.getItem("token");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // eslint-disable-next-line
   const [authToken, setAuthToken] = useState(existingToken);
   const [userName, setUserName] = useState("");
 
