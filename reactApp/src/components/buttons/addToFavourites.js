@@ -3,13 +3,13 @@ import { MoviesContext } from "../../contexts/moviesContext";
 import { AuthContext } from "../../contexts/authContext";
 import { addFavourite } from "../../api/movie-api";
 
-const AddToFavoriteButton = ({ movie }) => {
+const AddToFavouriteButton = ({ movie }) => {
   const moviesContext = useContext(MoviesContext);
   const authContext = useContext(AuthContext);
 
-  const handleAddToFavorite = e => {
+  const handleAddToFavourite = e => {
     e.preventDefault();
-    moviesContext.addToFavorites(movie.id);
+    moviesContext.addToFavourites(movie.id);
     addFavourite(authContext.userName, movie.id);
 
   };
@@ -17,11 +17,11 @@ const AddToFavoriteButton = ({ movie }) => {
     <button
       type="button"
       className="btn w-100 btn-primary"
-      onClick={handleAddToFavorite}
+      onClick={handleAddToFavourite}
     >
-      Add to Favorites
+      Add to favourites
     </button>
   );
 };
 
-export default AddToFavoriteButton;
+export default AddToFavouriteButton;

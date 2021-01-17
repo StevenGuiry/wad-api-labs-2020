@@ -1,20 +1,20 @@
 import React, { useState, useEffect, createContext, useReducer } from "react";
-import { getMovies, getUpcomingMovies, getTopRatedMovies, getNowPlayingMovies } from "../api/movie-api"; //Changed from tmdb api
+import { getMovies, getUpcomingMovies, getTopRatedMovies, getNowPlayingMovies } from "../api/movie-api";
 
 export const MoviesContext = createContext(null);
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "add-favorite":
+    case "add-favourite":
       return {
-        toprated: state.toprated.map((m) =>
-          m.id === action.payload.movie.id ? { ...m, favorite: true } : m
-        ),
         movies: state.movies.map((m) =>
-          m.id === action.payload.movie.id ? { ...m, favorite: true } : m
+          m.id === action.payload.movie.id ? { ...m, favourite: true } : m
+        ),
+        toprated: state.toprated.map((m) =>
+          m.id === action.payload.movie.id ? { ...m, favourite: true } : m
         ),
         nowplaying: state.nowplaying.map((m) =>
-          m.id === action.payload.movie.id ? { ...m, favorite: true } : m
+          m.id === action.payload.movie.id ? { ...m, favourite: true } : m
         ),
         upcoming: [...state.upcoming],
       };
@@ -54,9 +54,9 @@ const MoviesContextProvider = (props) => {
   const [authenticated, setAuthenticated] = useState(false);
 
 
-  const addToFavorites = (movieId) => {
+  const addToFavourites = (movieId) => {
     const indexMovies = state.movies.map((m) => m.id).indexOf(movieId);
-    dispatch({ type: "add-favorite", payload: { movie: state.movies[indexMovies], toprated: state.toprated[indexMovies], nowplaying: state.nowplaying[indexMovies] } });
+    dispatch({ type: "add-favourite", payload: { movie: state.movies[indexMovies], toprated: state.toprated[indexMovies], nowplaying: state.nowplaying[indexMovies] } });
   };
 
   const addToWatchlist = (movieId) => {
@@ -103,7 +103,7 @@ const MoviesContextProvider = (props) => {
         upcoming: state.upcoming,
         toprated: state.toprated,
         nowplaying: state.nowplaying,
-        addToFavorites: addToFavorites,
+        addToFavourites: addToFavourites,
         addToWatchlist: addToWatchlist,
         addReview: addReview,
         setAuthenticated

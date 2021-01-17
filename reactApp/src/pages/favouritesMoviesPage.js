@@ -1,14 +1,13 @@
 import React, { useContext, useState } from "react";
 import MovieListPageTemplate from "../components/templateMovieListPage";
 import AddReviewButton from '../components/buttons/addReview';
-//import { MoviesContext } from '../contexts/moviesContext';
 import { AuthContext } from '../contexts/authContext';
-// import { getFavourites } from '../api/movie-api';
 
 
-const FavoriteMoviesPage = () => {
+
+const FavouriteMoviesPage = () => {
   const context = useContext(AuthContext);
-  const [favorites, setFavourites] = useState({});
+  const [favourites, setFavourites] = useState({});
 
   if (context.isAuthenticated) {
     var userFav = async () => {
@@ -19,12 +18,12 @@ const FavoriteMoviesPage = () => {
 
     return (
       <MovieListPageTemplate
-        movies={favorites}
-        title={"Favorite Movies"}
+        movies={favourites}
+        title={"Favourite Movies"}
         action={movie => <AddReviewButton movie={movie} />}
       />
     );
   };
 }
 
-export default FavoriteMoviesPage;
+export default FavouriteMoviesPage;

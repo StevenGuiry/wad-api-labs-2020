@@ -5,7 +5,7 @@ import LoggedInHomePage from "./pages/loggedInHomePage";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import MovieDetailsPage from './pages/movieDetailsPage'
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"; //Took out 'Link'
-import FavoritesMoviesPage from './pages/favoritesMoviesPage';
+import favouritesMoviesPage from './pages/favouritesMoviesPage';
 import WatchlistMoviesPage from './pages/watchlistMoviesPage';
 import TopratedMoviesPage from './pages/topratedMoviesPage';
 import MovieReviewPage from "./pages/movieReviewPage";
@@ -32,7 +32,7 @@ const App = () => {
                 <Switch>
                   <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
                   <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
-                  <PrivateRoute exact path="/movies/favorites" component={FavoritesMoviesPage} />
+                  <PrivateRoute exact path="/movies/favourites" component={favouritesMoviesPage} />
                   <PrivateRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
                   <PrivateRoute exact path="/movies/watchlist" component={WatchlistMoviesPage} />
                   <PrivateRoute exact path="/movies/toprated" component={TopratedMoviesPage} />
