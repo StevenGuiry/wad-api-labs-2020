@@ -1,11 +1,12 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import moviesRouter from './api/movies';
-import bodyParser from 'body-parser';
-import './db';
-import {loadUsers, loadMovies} from './seedData';
 import usersRouter from './api/users';
 import genreRouter from './api/genres';
+import upcomingRouter from './api/upcoming';
+import bodyParser from 'body-parser';
+import './db';
+import {loadUsers, loadMovies, loadUpcoming} from './seedData';
 import session from 'express-session';
 import passport from './authenticate';
 
@@ -15,6 +16,7 @@ dotenv.config();
 if (process.env.SEED_DB) {
   loadUsers();
   loadMovies();
+  loadUpcoming();
 }
 
 const errHandler = (err, req, res, next) => {
@@ -43,6 +45,7 @@ app.use(session({
 app.use(express.static('public'));
 app.use(passport.initialize());
 app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesRouter);
+app.use('/api/upcoming', upcomingRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/genres', genreRouter);
 app.use(errHandler);

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import MovieListPageTemplate from "../components/templateMovieListPage";
 import AddReviewButton from '../components/buttons/addReview';
-import { MoviesContext } from '../contexts/moviesContext';
+//import { MoviesContext } from '../contexts/moviesContext';
 import { AuthContext } from '../contexts/authContext';
-import { getFavourites } from '../api/movie-api';
+// import { getFavourites } from '../api/movie-api';
 
 
 const FavoriteMoviesPage = () => {

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from '../contexts/authContext';
-import { Input, Button, Icon, Form, Label } from "semantic-ui-react";
 
 const SignUpPage = props => {
   const context = useContext(AuthContext)
