@@ -116,7 +116,7 @@ export const getUpcomingMovies = () => {
         .then(res => res.json());
 };
 
-export const getNowPlaying = () => {
+export const getNowPlayingMovies = () => {
     return fetch(
         '/api/nowplaying', {
             headers: {

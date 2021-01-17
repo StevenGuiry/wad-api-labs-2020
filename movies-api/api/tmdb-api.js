@@ -1,5 +1,4 @@
 import fetch from 'node-fetch';
-import { json } from 'express';
 
 export const getMovies = () => {
     return fetch(
@@ -13,6 +12,14 @@ export const getMovies = () => {
   export const getUpcomingMovies = () => {
     return fetch(
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
+    )
+    .then(res => res.json())
+    .then(json => res.results);
+  }
+
+  export const getNowPlayingMovies = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/nowplaying?api_key=${process.env.TMDB_KEY}&language=en-US&page=1`
     )
     .then(res => res.json())
     .then(json => res.results);
