@@ -61,3 +61,12 @@ export const getMovies = () => {
       .then(res => res.json())
       .then(json => json.cast);
   };
+
+  
+  export const getVideos = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.TMDB_KEY}&language=en-US`
+    )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
